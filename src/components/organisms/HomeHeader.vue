@@ -63,23 +63,31 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "@/styles/_mixin.scss";
 $top-margin: 2rem;
-$side-margin: 4rem;
 
 .home-header {
   @include over-lap($z-index: 1);
 }
 .home-header__logo-wrapper {
-  @include fixed-screen($top-margin, $ml: $side-margin);
+  @include fixed-screen($top-margin, $ml: 2rem);
+  @include tab {
+    @include fixed-screen($top-margin, $ml: 5rem);
+  }
 }
 .home-header__logo {
   cursor: pointer;
   max-height: 50px;
 }
 .home-header__hamburger {
-  @include fixed-screen($top-margin, $mr: $side-margin);
+  @include fixed-screen($top-margin, $mr: 1rem);
+  @include tab {
+    @include fixed-screen($top-margin, $mr: 4rem);
+  }
 }
 .home-header__drawer-menu {
   text-align: right;
-  @include fixed-screen(($top-margin * 2.4), $mr: $side-margin * 1.4);
+  @include fixed-screen(($top-margin * 2.4), $mr: 1rem * 2.6);
+  @include tab {
+    @include fixed-screen(($top-margin * 2.4), $mr: 4rem * 1.4);
+  }
 }
 </style>

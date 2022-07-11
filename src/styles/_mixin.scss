@@ -1,3 +1,19 @@
+// 各ブレイクポイント(表示が切り替わる端末の画面幅)を定義
+$_tab: theme("screens.md");
+$_pc: theme("screens.lg");
+
+@mixin tab {
+  @media screen and (min-width: ($_tab)) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media screen and (min-width: ($_pc)) {
+    @content;
+  }
+}
+
 // 要素を重ねるときに必要な設定。
 // prm:
 //   z-index: -1より低い数値を推奨(
