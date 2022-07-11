@@ -3,7 +3,10 @@
     <div class="w-full mx-auto overflow-hidden bg-white">
       <!-- ロゴ -->
       <div>
-        <a class="tw__hover-motion-opacity" href="/">
+        <a
+          class="tw__hover-motion-opacity"
+          href="https://kawaichi0228.github.io/kawaichi-portfolio"
+        >
           <img
             class="object-cover object-center w-full h-56"
             src="@\assets\images\program\portfolio\logo.png"
@@ -32,7 +35,10 @@
 
           <!-- ボタン -->
           <div class="flex flex-row space-x-2 justify-center">
-            <ButtonRightAllow linkUrl="/" class="w-6/12" />
+            <ButtonRightAllow
+              linkUrl="https://kawaichi0228.github.io/kawaichi-portfolio"
+              class="w-6/12"
+            />
             <ButtonGitHub
               linkUrl="https://github.com/Kawaichi0228/kawaichi-portfolio"
               class="w-6/12"
