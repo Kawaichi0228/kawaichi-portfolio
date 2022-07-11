@@ -40,7 +40,7 @@ export default defineComponent({
     NavMenu,
   },
 
-  setup(props, context) {
+  setup() {
     // data
     const state = reactive<Data>({
       isClick: false,
