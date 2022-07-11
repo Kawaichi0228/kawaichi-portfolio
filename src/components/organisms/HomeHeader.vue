@@ -5,6 +5,7 @@
         <a
           href="#top"
           v-smooth-scroll="{
+            updateHistory: false,
             duration: 800,
             offset: 0,
           }"
