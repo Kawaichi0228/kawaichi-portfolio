@@ -4,6 +4,7 @@
       <a
         href="#about"
         v-smooth-scroll="{
+          updateHistory: false,
           duration: 800,
           offset: 0,
         }"
@@ -14,6 +15,7 @@
       <a
         href="#program"
         v-smooth-scroll="{
+          updateHistory: false,
           duration: 800,
           offset: 0,
         }"
@@ -24,6 +26,7 @@
       <a
         href="#design"
         v-smooth-scroll="{
+          updateHistory: false,
           duration: 800,
           offset: 0,
         }"
