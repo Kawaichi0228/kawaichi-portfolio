@@ -1,0 +1,32 @@
+// 要素を重ねるときに必要な設定。
+// prm:
+//   z-index: -1より低い数値を推奨(
+@mixin over-lap($z-index) {
+  z-index: $z-index;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+// 画面基準で要素を固定
+@mixin fixed-screen($mt: null, $ml: null, $mr: null, $mb: null) {
+  position: fixed;
+  top: $mt;
+  left: $ml;
+  right: $mr;
+  bottom: $mb;
+}
+
+@mixin slant-bg($top: null, $z-index: -1, $angle: 0deg, $bg-color: #555555) {
+  position: relative;
+  top: $top;
+
+  &::before {
+    content: "";
+    @include over-lap($z-index);
+    background-color: $bg-color;
+    transform: skewY($angle);
+  }
+}

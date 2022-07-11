@@ -1,0 +1,19 @@
+.tw__subtitle {
+  @apply text-3xl mb-6 tracking-widest;
+}
+
+.tw__round-box-dark {
+  @apply w-fit px-3 py-1 text-white rounded-2xl;
+}
+
+.tw__hover-motion-opacity-scale {
+  &:hover {
+    @apply scale-105 opacity-75 transition duration-300;
+  }
+}
+
+.tw__hover-motion-opacity {
+  &:hover {
+    @apply opacity-75 transition duration-300;
+  }
+}
