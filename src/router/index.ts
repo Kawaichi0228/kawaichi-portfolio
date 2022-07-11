@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router"
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router"
 import HomeView from "../views/HomeView.vue"
 
 const routes: Array<RouteRecordRaw> = [
@@ -19,7 +19,9 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  // URLにハッシュ(#)を付与するか
+  history: createWebHashHistory(),
+  //history: createWebHistory(process.env.BASE_URL),
   routes,
 })
 
