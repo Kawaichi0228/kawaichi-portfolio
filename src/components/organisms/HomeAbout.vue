@@ -6,22 +6,34 @@
           <img class="h-6" src="@\assets\images\subtitle\about.png" />
         </h2>
       </div>
-      <div class="text-sm leading-8">
-        <p>Kawaichi</p>
-        <p>age 28</p>
-        <p>Kawasaki City, Kanagawa</p>
-        <p>
-          元会計事務所。税務会計業務全般
-          ExcelVBAを使った確定申告用のツール作成。
-        </p>
-        <p>
-          卒業後は、JAグループ会社にて勤務。
-          子会社のDTPデザインや、補助金業務の総括、ExcelVBA等を使った業務自動化に携わる。
-        </p>
-      </div>
+      <FadeInComponentScrollEvent>
+        <div class="text-sm leading-8">
+          <p class="text-2xl">Kawaichi</p>
+          <p>age 28</p>
+          <p>Kawasaki City, Kanagawa</p>
+          <p>
+            学生時代に情報処理とDTPデザインを学び、卒業後はJAグループ会社にて勤務。
+            子会社のDTPデザインや、補助金事業の総括、ExcelVBA等を使った部署内業務自動化に携わる。
+            その後、都内の会計事務所へ転職し、税務会計業務全般を担当。
+            VBAスキルを活用し、確定申告用のツール等を開発し業務の円滑化を図る。
+            働く中で、仕組みやモノづくりが好きだということをあらためて感じ、エンジニアを志す。
+          </p>
+        </div>
+      </FadeInComponentScrollEvent>
     </div>
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+import FadeInComponentScrollEvent from "@/components/parts/FadeInComponentScrollEvent.vue";
+
+export default defineComponent({
+  components: {
+    FadeInComponentScrollEvent,
+  },
+});
+</script>
 
 <style lang="scss" scoped>
 @import "@/styles/_mixin.scss";

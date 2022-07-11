@@ -29,7 +29,7 @@
           <div class="mb-4 text-primary">
             <div class="mb-4">
               <p>- 開発期間 -</p>
-              <p>2022.7 (約2週間)</p>
+              <p>2022.7 (約1週間)</p>
             </div>
           </div>
 

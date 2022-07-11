@@ -7,22 +7,24 @@
         </h2>
       </div>
 
-      <div class="flex flex-col md:flex-row justify-center md:space-x-16">
-        <HomeProgramDotTask
-          class="mb-28 md:mb-18 w-12/12 md:w-6/12 md:max-w-lg shadow-lg"
-        />
-        <HomeProgramFitScreenWindow
-          class="mb-28 md:mb-18 w-12/12 md:w-6/12 md:max-w-lg shadow-lg"
-        />
-      </div>
-      <div class="flex flex-col md:flex-row justify-center md:space-x-16">
-        <HomeProgramPortfolio
-          class="mb-28 md:mb-18 w-12/12 md:w-6/12 md:max-w-lg shadow-lg"
-        />
-        <HomeProgramShotokukakudai
-          class="mb-28 md:mb-18 w-12/12 md:w-6/12 md:max-w-lg shadow-lg"
-        />
-      </div>
+      <FadeInComponentScrollEvent>
+        <div class="flex flex-col md:flex-row justify-center md:space-x-16">
+          <HomeProgramDotTask
+            class="mb-28 md:mb-18 w-12/12 md:w-6/12 md:max-w-lg shadow-lg"
+          />
+          <HomeProgramFitScreenWindow
+            class="mb-28 md:mb-18 w-12/12 md:w-6/12 md:max-w-lg shadow-lg"
+          />
+        </div>
+        <div class="flex flex-col md:flex-row justify-center md:space-x-16">
+          <HomeProgramPortfolio
+            class="mb-28 md:mb-18 w-12/12 md:w-6/12 md:max-w-lg shadow-lg"
+          />
+          <HomeProgramShotokukakudai
+            class="mb-28 md:mb-18 w-12/12 md:w-6/12 md:max-w-lg shadow-lg"
+          />
+        </div>
+      </FadeInComponentScrollEvent>
     </div>
   </div>
 </template>
@@ -33,6 +35,7 @@ import HomeProgramPortfolio from "@/components/organisms/HomeProgramPortfolio.vu
 import HomeProgramDotTask from "@/components/organisms/HomeProgramDotTask.vue";
 import HomeProgramFitScreenWindow from "@/components/organisms/HomeProgramFitScreenWindow.vue";
 import HomeProgramShotokukakudai from "@/components/organisms/HomeProgramShotokukakudai.vue";
+import FadeInComponentScrollEvent from "@/components/parts/FadeInComponentScrollEvent.vue";
 
 export default defineComponent({
   components: {
@@ -40,6 +43,7 @@ export default defineComponent({
     HomeProgramDotTask,
     HomeProgramFitScreenWindow,
     HomeProgramShotokukakudai,
+    FadeInComponentScrollEvent,
   },
 });
 </script>

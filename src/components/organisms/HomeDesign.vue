@@ -7,17 +7,19 @@
         </h2>
       </div>
 
-      <div class="flex flex-row flex-wrap justify-center">
-        <div
-          v-for="imagePath in imagePathArray"
-          :key="imagePath"
-          class="w-6/12 sm:w-4/12 md:w-3/12"
-        >
-          <HomeDesignImageCard>
-            <img :src="imagePath" />
-          </HomeDesignImageCard>
+      <FadeInComponentScrollEvent>
+        <div class="flex flex-row flex-wrap justify-center">
+          <div
+            v-for="imagePath in imagePathArray"
+            :key="imagePath"
+            class="w-6/12 sm:w-4/12 md:w-3/12"
+          >
+            <HomeDesignImageCard>
+              <img :src="imagePath" />
+            </HomeDesignImageCard>
+          </div>
         </div>
-      </div>
+      </FadeInComponentScrollEvent>
     </div>
   </div>
 </template>
@@ -25,10 +27,12 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import HomeDesignImageCard from "@/components/parts/HomeDesignImageCard.vue";
+import FadeInComponentScrollEvent from "@/components/parts/FadeInComponentScrollEvent.vue";
 
 export default defineComponent({
   components: {
     HomeDesignImageCard,
+    FadeInComponentScrollEvent,
   },
   setup() {
     const imagePathArray = ref<object>([
