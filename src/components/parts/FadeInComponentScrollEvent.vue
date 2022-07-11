@@ -22,7 +22,7 @@ export default {
       let top = this.$el.getBoundingClientRect().top;
 
       if (!this.visible) {
-        this.visible = top < window.innerHeight + 150;
+        this.visible = top < window.innerHeight + 80;
       }
     },
   },
