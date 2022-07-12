@@ -21,6 +21,11 @@
           </div>
         </div>
       </FadeInComponentScrollEvent>
+
+      <button @click="test()">Click Me!</button>
+      <article>
+        <div id="box">Box</div>
+      </article>
     </div>
   </div>
 </template>
@@ -62,9 +67,26 @@ export default defineComponent({
       childRef.value.openModal();
     };
 
+    const test = (): void => {
+      //表示・非表示を切り替える要素を取得
+      let box = document.getElementById("box");
+
+      //styleのdisplayを変更する関数
+      const changeElement = (el: any) => {
+        if (el.style.display == "") {
+          el.style.display = "none";
+        } else {
+          el.style.display = "";
+        }
+      };
+
+      changeElement(box);
+    };
+
     return {
       imagePathArray,
       onChildMethodClick,
+      test,
     };
   },
 });
