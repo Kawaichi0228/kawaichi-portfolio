@@ -7,7 +7,7 @@
         </h2>
       </div>
 
-      <div class="foobox">
+      <div class="sr__fadein-right">
         <div class="flex flex-col md:flex-row justify-center md:space-x-16">
           <HomeProgramDotTask
             class="mb-28 md:mb-18 w-12/12 md:w-6/12 md:max-w-lg shadow-lg"
@@ -35,7 +35,6 @@ import HomeProgramPortfolio from "@/components/organisms/HomeProgramPortfolio.vu
 import HomeProgramDotTask from "@/components/organisms/HomeProgramDotTask.vue";
 import HomeProgramFitScreenWindow from "@/components/organisms/HomeProgramFitScreenWindow.vue";
 import HomeProgramShotokukakudai from "@/components/organisms/HomeProgramShotokukakudai.vue";
-import ScrollReveal from "scrollreveal";
 
 export default defineComponent({
   components: {
@@ -43,16 +42,6 @@ export default defineComponent({
     HomeProgramDotTask,
     HomeProgramFitScreenWindow,
     HomeProgramShotokukakudai,
-  },
-
-  mounted() {
-    ScrollReveal().reveal(".foobox", {
-      duration: 1800, // アニメーションの完了にかかる時間
-      origin: "top", // 出現方向
-      distance: "100px", // 出現が開始する距離
-      viewFactor: 0.1, // どれくらい見えたら実行するか (0.0 ~ 1.0)
-      reset: false, // スクロールする度にアニメーションをループ(再表示)するか
-    });
   },
 });
 </script>

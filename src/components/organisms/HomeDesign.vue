@@ -7,7 +7,7 @@
         </h2>
       </div>
 
-      <FadeInComponentScrollEvent2>
+      <div class="sr__fadein-left">
         <div class="flex flex-row flex-wrap justify-center">
           <div
             v-for="imagePath in imagePathArray"
@@ -20,7 +20,7 @@
             <!--<ModalTest />-->
           </div>
         </div>
-      </FadeInComponentScrollEvent2>
+      </div>
     </div>
   </div>
 </template>
@@ -28,15 +28,14 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import HomeDesignImageCard from "@/components/parts/HomeDesignImageCard.vue";
-import FadeInComponentScrollEvent2 from "@/components/parts/FadeInComponentScrollEvent2.vue";
 //import ModalTest from "@/components/parts/ModalTest.vue";
 
 export default defineComponent({
   components: {
     HomeDesignImageCard,
-    FadeInComponentScrollEvent2,
     //ModalTest,
   },
+
   setup() {
     // 各カードに表示させる画像のパス
     const imagePathArray = ref<object>([

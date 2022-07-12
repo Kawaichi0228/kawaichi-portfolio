@@ -6,7 +6,7 @@
           <img class="h-6" src="@\assets\images\subtitle\about.png" />
         </h2>
       </div>
-      <FadeInComponentScrollEvent>
+      <div class="sr__fadein-top">
         <div class="text-sm leading-8">
           <p class="text-2xl">Kawaichi</p>
           <p>age 28</p>
@@ -19,21 +19,10 @@
             働く中で、仕組みやモノづくりが好きだということをあらためて感じ、エンジニアを志す。
           </p>
         </div>
-      </FadeInComponentScrollEvent>
+      </div>
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-import FadeInComponentScrollEvent from "@/components/parts/FadeInComponentScrollEvent.vue";
-
-export default defineComponent({
-  components: {
-    FadeInComponentScrollEvent,
-  },
-});
-</script>
 
 <style lang="scss" scoped>
 @import "@/styles/_mixin.scss";
