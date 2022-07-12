@@ -69,10 +69,12 @@ export default defineComponent({
 
     const test = (): void => {
       //表示・非表示を切り替える要素を取得
-      let box = document.getElementById("box");
+      let box: HTMLElement | null = document.getElementById("box");
 
-      //styleのdisplayを変更する関数
-      const changeElement = (el: any) => {
+      //styleのdisplayを変更する関数を定義
+      const changeElement = (el: HTMLElement | null) => {
+        if (el == null) return;
+
         if (el.style.display == "") {
           el.style.display = "none";
         } else {
@@ -80,6 +82,7 @@ export default defineComponent({
         }
       };
 
+      // 表示・非表示を切り替え
       changeElement(box);
     };
 
