@@ -7,7 +7,7 @@
         </h2>
       </div>
 
-      <FadeInComponentScrollEvent>
+      <div id="box">
         <div class="flex flex-row flex-wrap justify-center">
           <div
             v-for="imagePath in imagePathArray"
@@ -20,12 +20,7 @@
             <!--<ModalTest />-->
           </div>
         </div>
-      </FadeInComponentScrollEvent>
-
-      <button @click="test()">Click Me!</button>
-      <article>
-        <div id="box">Box</div>
-      </article>
+      </div>
     </div>
   </div>
 </template>
@@ -33,14 +28,16 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import HomeDesignImageCard from "@/components/parts/HomeDesignImageCard.vue";
-import FadeInComponentScrollEvent from "@/components/parts/FadeInComponentScrollEvent.vue";
 //import ModalTest from "@/components/parts/ModalTest.vue";
 
 export default defineComponent({
   components: {
     HomeDesignImageCard,
-    FadeInComponentScrollEvent,
+    //FadeInComponentScrollEvent,
     //ModalTest,
+  },
+  created() {
+    window.addEventListener("scroll", this.test);
   },
   setup() {
     // 各カードに表示させる画像のパス
@@ -67,23 +64,44 @@ export default defineComponent({
       childRef.value.openModal();
     };
 
-    const test = (): void => {
-      //表示・非表示を切り替える要素を取得
-      let box: HTMLElement | null = document.getElementById("box");
+    // ref内で初期値を定義
+    const isVisible = ref<boolean>(false);
 
+    // ref内の値には`.value`でアクセスする
+    const showElement = (): void => {
+      isVisible.value = true;
+    };
+
+    const test = (): void => {
       //styleのdisplayを変更する関数を定義
       const changeElement = (el: HTMLElement | null) => {
         if (el == null) return;
-
-        if (el.style.display == "") {
-          el.style.display = "none";
-        } else {
+        if (!isVisible.value) {
           el.style.display = "";
+          el.classList.add("fadeIn");
+          showElement();
+        }
+      };
+
+      //表示・非表示を切り替える要素を取得
+      let box: HTMLElement | null = document.getElementById("box");
+
+      // 画面最上部を取得
+      const isDefineScrollTopPosition = (el: HTMLElement | null) => {
+        if (el == null) return;
+
+        let top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight + 80) {
+          return true;
+        } else {
+          return false;
         }
       };
 
       // 表示・非表示を切り替え
-      changeElement(box);
+      if (isDefineScrollTopPosition(box)) {
+        changeElement(box);
+      }
     };
 
     return {
@@ -105,5 +123,22 @@ export default defineComponent({
     $angle: 0deg,
     $bg-color: theme("colors.base")
   );
+}
+
+#box {
+  display: hidden;
+}
+.fadeIn {
+  animation: fadeIn 2s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-75px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 </style>
