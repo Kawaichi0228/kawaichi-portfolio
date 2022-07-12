@@ -17,6 +17,7 @@ $base-font: "Montserrat", "roboto", "Noto Sans JP", "Hiragino Kaku Gothic ProN",
   font-family: $base-font;
   @apply mx-auto text-center;
   line-height: 3rem;
+  overflow: hidden; // MEMO: ScrollRevealでLeftやRightを指定していると、その開始位置分ブロックが生成されてしまうため隠す
 }
 
 body {
