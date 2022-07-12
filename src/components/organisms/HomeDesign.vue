@@ -7,7 +7,7 @@
         </h2>
       </div>
 
-      <div id="box">
+      <div id="fadeElId">
         <div class="flex flex-row flex-wrap justify-center">
           <div
             v-for="imagePath in imagePathArray"
@@ -33,11 +33,10 @@ import HomeDesignImageCard from "@/components/parts/HomeDesignImageCard.vue";
 export default defineComponent({
   components: {
     HomeDesignImageCard,
-    //FadeInComponentScrollEvent,
     //ModalTest,
   },
   created() {
-    window.addEventListener("scroll", this.test);
+    window.addEventListener("scroll", this.showFadeInElement);
   },
   setup() {
     // 各カードに表示させる画像のパス
@@ -57,13 +56,14 @@ export default defineComponent({
 
     // 子コンポーネント側のコンポーネント情報を受け取る ref を宣言
     const childRef = ref();
-    console.log(childRef);
 
     // 子コンポーネント側のメソッドを発火させるメソッドを実装しています。
     const onChildMethodClick = () => {
       childRef.value.openModal();
     };
 
+    // -------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
     // ref内で初期値を定義
     const isVisible = ref<boolean>(false);
 
@@ -72,42 +72,48 @@ export default defineComponent({
       isVisible.value = true;
     };
 
-    const test = (): void => {
-      //styleのdisplayを変更する関数を定義
-      const changeElement = (el: HTMLElement | null) => {
-        if (el == null) return;
-        if (!isVisible.value) {
-          el.style.display = "";
-          el.classList.add("fadeIn");
-          showElement();
-        }
-      };
+    // 指定した要素のCSSのdisplayを変更する関数
+    const changeCSSforElement = (
+      el: HTMLElement | null,
+      className: string
+    ): void => {
+      if (el == null) return;
 
-      //表示・非表示を切り替える要素を取得
-      let box: HTMLElement | null = document.getElementById("box");
-
-      // 画面最上部を取得
-      const isDefineScrollTopPosition = (el: HTMLElement | null) => {
-        if (el == null) return;
-
-        let top = el.getBoundingClientRect().top;
-        if (top < window.innerHeight + 80) {
-          return true;
-        } else {
-          return false;
-        }
-      };
-
-      // 表示・非表示を切り替え
-      if (isDefineScrollTopPosition(box)) {
-        changeElement(box);
+      if (!isVisible.value) {
+        el.style.display = "";
+        el.classList.add(className);
+        showElement();
       }
     };
+
+    // 指定した画面上部位置にスクロール位置が達していたらtrueを返す関数
+    const isDefineScrollTopPosition = (el: HTMLElement | null) => {
+      if (el == null) return;
+
+      const top = el.getBoundingClientRect().top;
+      return top < window.innerHeight ? true : false;
+    };
+
+    // -------------------------------------------------------------------------
+    // 呼び出し用のメイン関数
+    // -------------------------------------------------------------------------
+    const showFadeInElement = (): void => {
+      //表示・非表示を切り替える要素のidを指定して取得
+      const fadeElId = "fadeElId"; // タグ要素のID名
+      const fadeEl: HTMLElement | null = document.getElementById(fadeElId);
+
+      // 表示・非表示を切り替え
+      const className = "fadeIn"; // 表示時に適用させたいCSSのclass名
+      if (isDefineScrollTopPosition(fadeEl))
+        changeCSSforElement(fadeEl, className);
+    };
+    // -------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
 
     return {
       imagePathArray,
       onChildMethodClick,
-      test,
+      showFadeInElement,
     };
   },
 });
@@ -125,7 +131,7 @@ export default defineComponent({
   );
 }
 
-#box {
+#fadeElId {
   display: hidden;
 }
 .fadeIn {
