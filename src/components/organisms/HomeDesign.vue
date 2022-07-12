@@ -17,6 +17,7 @@
             <HomeDesignImageCard>
               <img :src="imagePath" />
             </HomeDesignImageCard>
+            <!--<ModalTest />-->
           </div>
         </div>
       </FadeInComponentScrollEvent>
@@ -28,13 +29,16 @@
 import { defineComponent, ref } from "vue";
 import HomeDesignImageCard from "@/components/parts/HomeDesignImageCard.vue";
 import FadeInComponentScrollEvent from "@/components/parts/FadeInComponentScrollEvent.vue";
+//import ModalTest from "@/components/parts/ModalTest.vue";
 
 export default defineComponent({
   components: {
     HomeDesignImageCard,
     FadeInComponentScrollEvent,
+    //ModalTest,
   },
   setup() {
+    // 各カードに表示させる画像のパス
     const imagePathArray = ref<object>([
       require("@/assets/images/design/brawnhambark.png"),
       require("@/assets/images/design/brawnice.png"),
@@ -48,8 +52,19 @@ export default defineComponent({
       require("@/assets/images/design/cafeore.png"),
       require("@/assets/images/design/yakinikuhouse.png"),
     ]);
+
+    // 子コンポーネント側のコンポーネント情報を受け取る ref を宣言
+    const childRef = ref();
+    console.log(childRef);
+
+    // 子コンポーネント側のメソッドを発火させるメソッドを実装しています。
+    const onChildMethodClick = () => {
+      childRef.value.openModal();
+    };
+
     return {
       imagePathArray,
+      onChildMethodClick,
     };
   },
 });
