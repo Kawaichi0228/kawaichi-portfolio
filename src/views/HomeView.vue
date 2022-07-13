@@ -1,5 +1,14 @@
 <template>
   <div class="home">
+    <ToggleVisbleAtScrollEvent
+      startPostionToVisible="80"
+      startPostionToHidden="100"
+    >
+      <template #fadein-slot>
+        <ScrollTopButton></ScrollTopButton>
+      </template>
+    </ToggleVisbleAtScrollEvent>
+
     <HomeHeader id="top" />
     <HomeMainVisual />
     <HomeAbout id="about" />
@@ -17,6 +26,8 @@ import HomeAbout from "@/components/organisms/HomeAbout.vue";
 import HomeProgram from "@/components/organisms/HomeProgram.vue";
 import HomeDesign from "@/components/organisms/HomeDesign.vue";
 import HomeFooter from "@/components/organisms/HomeFooter.vue";
+import ToggleVisbleAtScrollEvent from "@/components/parts/ToggleVisbleAtScrollEvent.vue";
+import ScrollTopButton from "@/components/parts/ScrollTopButton.vue";
 import ScrollReveal from "scrollreveal";
 
 export default defineComponent({
@@ -29,6 +40,8 @@ export default defineComponent({
     HomeProgram,
     HomeDesign,
     HomeFooter,
+    ToggleVisbleAtScrollEvent,
+    ScrollTopButton,
   },
 
   mounted() {
@@ -54,6 +67,12 @@ export default defineComponent({
       distance: "100px", // 出現が開始する距離
       viewFactor: 0, // どれくらい見えたら実行するか (0.0 ~ 1.0)
       reset: false, // スクロールする度にアニメーションをループ(再表示)するか
+    });
+    ScrollReveal().reveal(".sr__fadein-normal", {
+      duration: 1400, // アニメーションの完了にかかる時間
+      distance: "0px", // 出現が開始する距離
+      viewFactor: 2, // どれくらい見えたら実行するか (0.0 ~ 1.0)
+      reset: true, // スクロールする度にアニメーションをループ(再表示)するか
     });
   },
 });
