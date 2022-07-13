@@ -19,7 +19,7 @@
         Kakedashi Engineer's Portfolio Site.
       </div>
       <!-- 各言語の内容 -->
-      <div class="-mt-3">
+      <div class="-mt-1 leading-8">
         <transition-group
           tag="span"
           appear
