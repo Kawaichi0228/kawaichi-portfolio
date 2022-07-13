@@ -30,8 +30,6 @@ import HomeFooter from "@/components/organisms/HomeFooter.vue";
 import ToggleVisbleAtScrollEvent from "@/components/parts/ToggleVisbleAtScrollEvent.vue";
 import ScrollTopButton from "@/components/parts/ScrollTopButton.vue";
 import ScrollReveal from "scrollreveal";
-import { ref } from "vue";
-import gsap from "gsap";
 
 export default defineComponent({
   name: "HomeView",
@@ -51,7 +49,6 @@ export default defineComponent({
     // スクロールに連動するフェードアニメーション関数をここに全て定義
     // (使用時 <div class="sr__fadein-top">)
     const sr = ScrollReveal();
-
     const setFadeinTop = () => {
       const className = ".sr__fadein-top";
       const fadeinTop = {
@@ -60,6 +57,7 @@ export default defineComponent({
         distance: "100px", // 出現が開始する距離
         viewFactor: 0.2, // どれくらい見えたら実行するか (0.0 ~ 1.0)
         reset: false, // スクロールする度にアニメーションをループ(再表示)するか
+        easing: "ease-out", // モーションのなめらかさ
       };
       sr.reveal(className, fadeinTop);
     };
@@ -73,6 +71,7 @@ export default defineComponent({
         distance: "100px", // 出現が開始する距離
         viewFactor: 0.2, // どれくらい見えたら実行するか (0.0 ~ 1.0)
         reset: false, // スクロールする度にアニメーションをループ(再表示)するか
+        easing: "ease-out", // モーションのなめらかさ
       };
       sr.reveal(className, fadeinLeft);
     };
@@ -86,6 +85,16 @@ export default defineComponent({
         distance: "100px", // 出現が開始する距離
         viewFactor: 0.2, // どれくらい見えたら実行するか (0.0 ~ 1.0)
         reset: false, // スクロールする度にアニメーションをループ(再表示)するか
+        easing: "ease-out", // モーションのなめらかさ
+        //afterReveal: sr.reveal(".card-title, .card-text", {
+        //  duration: 1400, // アニメーションの完了にかかる時間
+        //  origin: "left", // 出現方向
+        //  distance: "400px", // 出現が開始する距離
+        //  viewFactor: 0.2, // どれくらい見えたら実行するか (0.0 ~ 1.0)
+        //  reset: false, // スクロールする度にアニメーションをループ(再表示)するか
+        //  easing: "ease-out", // モーションのなめらかさ
+        //  delay: 100,
+        //}),
       };
       sr.reveal(className, fadeinRight);
     };
