@@ -51,28 +51,22 @@ export default defineComponent({
       duration: 1400, // アニメーションの完了にかかる時間
       origin: "top", // 出現方向
       distance: "100px", // 出現が開始する距離
-      viewFactor: 0, // どれくらい見えたら実行するか (0.0 ~ 1.0)
+      viewFactor: 0.2, // どれくらい見えたら実行するか (0.0 ~ 1.0)
       reset: false, // スクロールする度にアニメーションをループ(再表示)するか
     });
     ScrollReveal().reveal(".sr__fadein-left", {
       duration: 1400, // アニメーションの完了にかかる時間
       origin: "left", // 出現方向
       distance: "100px", // 出現が開始する距離
-      viewFactor: 0, // どれくらい見えたら実行するか (0.0 ~ 1.0)
+      viewFactor: 0.2, // どれくらい見えたら実行するか (0.0 ~ 1.0)
       reset: false, // スクロールする度にアニメーションをループ(再表示)するか
     });
     ScrollReveal().reveal(".sr__fadein-right", {
       duration: 1400, // アニメーションの完了にかかる時間
       origin: "right", // 出現方向
       distance: "100px", // 出現が開始する距離
-      viewFactor: 0, // どれくらい見えたら実行するか (0.0 ~ 1.0)
+      viewFactor: 0.2, // どれくらい見えたら実行するか (0.0 ~ 1.0)
       reset: false, // スクロールする度にアニメーションをループ(再表示)するか
-    });
-    ScrollReveal().reveal(".sr__fadein-normal", {
-      duration: 1400, // アニメーションの完了にかかる時間
-      distance: "0px", // 出現が開始する距離
-      viewFactor: 2, // どれくらい見えたら実行するか (0.0 ~ 1.0)
-      reset: true, // スクロールする度にアニメーションをループ(再表示)するか
     });
   },
 });
