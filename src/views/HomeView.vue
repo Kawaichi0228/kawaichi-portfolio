@@ -14,6 +14,7 @@
     <HomeAbout id="about" />
     <HomeProgram id="program" />
     <HomeDesign id="design" />
+
     <HomeFooter />
   </div>
 </template>
@@ -29,6 +30,8 @@ import HomeFooter from "@/components/organisms/HomeFooter.vue";
 import ToggleVisbleAtScrollEvent from "@/components/parts/ToggleVisbleAtScrollEvent.vue";
 import ScrollTopButton from "@/components/parts/ScrollTopButton.vue";
 import ScrollReveal from "scrollreveal";
+import { ref } from "vue";
+import gsap from "gsap";
 
 export default defineComponent({
   name: "HomeView",
@@ -47,27 +50,46 @@ export default defineComponent({
   mounted() {
     // スクロールに連動するフェードアニメーション関数をここに全て定義
     // (使用時 <div class="sr__fadein-top">)
-    ScrollReveal().reveal(".sr__fadein-top", {
-      duration: 1400, // アニメーションの完了にかかる時間
-      origin: "top", // 出現方向
-      distance: "100px", // 出現が開始する距離
-      viewFactor: 0.2, // どれくらい見えたら実行するか (0.0 ~ 1.0)
-      reset: false, // スクロールする度にアニメーションをループ(再表示)するか
-    });
-    ScrollReveal().reveal(".sr__fadein-left", {
-      duration: 1400, // アニメーションの完了にかかる時間
-      origin: "left", // 出現方向
-      distance: "100px", // 出現が開始する距離
-      viewFactor: 0.2, // どれくらい見えたら実行するか (0.0 ~ 1.0)
-      reset: false, // スクロールする度にアニメーションをループ(再表示)するか
-    });
-    ScrollReveal().reveal(".sr__fadein-right", {
-      duration: 1400, // アニメーションの完了にかかる時間
-      origin: "right", // 出現方向
-      distance: "100px", // 出現が開始する距離
-      viewFactor: 0.2, // どれくらい見えたら実行するか (0.0 ~ 1.0)
-      reset: false, // スクロールする度にアニメーションをループ(再表示)するか
-    });
+    const sr = ScrollReveal();
+
+    const setFadeinTop = () => {
+      const className = ".sr__fadein-top";
+      const fadeinTop = {
+        duration: 1400, // アニメーションの完了にかかる時間
+        origin: "top", // 出現方向
+        distance: "100px", // 出現が開始する距離
+        viewFactor: 0.2, // どれくらい見えたら実行するか (0.0 ~ 1.0)
+        reset: false, // スクロールする度にアニメーションをループ(再表示)するか
+      };
+      sr.reveal(className, fadeinTop);
+    };
+    setFadeinTop();
+
+    const setFadeinLeft = () => {
+      const className = ".sr__fadein-left";
+      const fadeinLeft = {
+        duration: 1400, // アニメーションの完了にかかる時間
+        origin: "left", // 出現方向
+        distance: "100px", // 出現が開始する距離
+        viewFactor: 0.2, // どれくらい見えたら実行するか (0.0 ~ 1.0)
+        reset: false, // スクロールする度にアニメーションをループ(再表示)するか
+      };
+      sr.reveal(className, fadeinLeft);
+    };
+    setFadeinLeft();
+
+    const setFadeinRight = () => {
+      const className = ".sr__fadein-right";
+      const fadeinRight = {
+        duration: 1400, // アニメーションの完了にかかる時間
+        origin: "right", // 出現方向
+        distance: "100px", // 出現が開始する距離
+        viewFactor: 0.2, // どれくらい見えたら実行するか (0.0 ~ 1.0)
+        reset: false, // スクロールする度にアニメーションをループ(再表示)するか
+      };
+      sr.reveal(className, fadeinRight);
+    };
+    setFadeinRight();
   },
 });
 </script>
