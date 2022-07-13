@@ -1,5 +1,5 @@
 <template>
-  <div class="home-main-visual pt-24 pb-60">
+  <div class="home-main-visual pt-24 pb-60 sr__fadein-top">
     <div class="w-10/12 mx-auto">
       <div class="flex justify-center mb-2">
         <img
@@ -15,16 +15,71 @@
           />
         </h1>
       </div>
-      <div class="text-primary tracking-widest">
+      <div class="text-primary tracking-widest sr__fadein-bottom-delay">
         Kakedashi Engineer's Portfolio Site.
       </div>
-      <div class="text-sm tracking-widest">
-        Go / Gin / Python / Vue.js / HTML5 / CSS3 / TypeScript / ExcelVBA /
-        MySQL
+      <!-- 各言語の内容 -->
+      <div class="-mt-3">
+        <transition-group
+          tag="span"
+          appear
+          @before-enter="panelsBeforeEnter"
+          @enter="panelsEnter"
+        >
+          <span
+            class="text-sm tracking-widest sr__fadein-bottom-delay"
+            v-for="(panel, index) in panels"
+            :key="panel.value"
+            :data-index="index"
+          >
+            <span>{{ panel.value }}</span>
+          </span>
+        </transition-group>
       </div>
     </div>
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent, ref } from "vue";
+import gsap from "gsap";
+
+export default defineComponent({
+  setup() {
+    // 表示するパネルの値設定 (v-for用の配列オブジェクト)
+    const panels = ref([
+      { value: "Go / " },
+      { value: "Gin / " },
+      { value: "Python / " },
+      { value: "Vue.js / " },
+      { value: "HTML5 / " },
+      { value: "CSS3 / " },
+      { value: "TypeScript / " },
+      { value: "ExcelVBA / " },
+      { value: "MySQL" },
+    ]);
+    // パネルのスタート設定
+    const panelsBeforeEnter = (el: any) => {
+      gsap.set(el, {
+        y: 100,
+        opacity: 0,
+      });
+    };
+    // パネルのアニメーション設定
+    const panelsEnter = (el: any, done: any) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        delay: 1 + el.dataset.index * 0.2,
+        onComplete: done,
+      });
+    };
+    return { panels, panelsBeforeEnter, panelsEnter };
+  },
+});
+</script>
+
 
 <style lang="scss" scoped>
 .home-main-visual {
@@ -37,3 +92,9 @@
   max-height: 2rem;
 }
 </style>
+
+
+
+
+
+

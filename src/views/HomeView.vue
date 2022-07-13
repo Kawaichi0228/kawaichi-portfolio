@@ -63,6 +63,21 @@ export default defineComponent({
     };
     setFadeinTop();
 
+    const setFadeinBottomDelay = () => {
+      const className = ".sr__fadein-bottom-delay";
+      const fadeinLeft = {
+        duration: 1200, // アニメーションの完了にかかる時間
+        origin: "bottom", // 出現方向
+        distance: "80px", // 出現が開始する距離
+        viewFactor: 0.2, // どれくらい見えたら実行するか (0.0 ~ 1.0)
+        reset: false, // スクロールする度にアニメーションをループ(再表示)するか
+        easing: "ease-out", // モーションのなめらかさ
+        delay: 400,
+      };
+      sr.reveal(className, fadeinLeft);
+    };
+    setFadeinBottomDelay();
+
     const setFadeinLeft = () => {
       const className = ".sr__fadein-left";
       const fadeinLeft = {

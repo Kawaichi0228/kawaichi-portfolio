@@ -11,7 +11,7 @@
           <p class="text-2xl">Kawaichi</p>
           <p>age 28</p>
           <p>Kawasaki City, Kanagawa</p>
-          <p>
+          <p class="sr__fadein-bottom-delay">
             学生時代に情報処理とDTPデザインを学び、卒業後はJAグループ会社にて勤務。
             子会社のDTPデザインや、補助金事業の総括、ExcelVBA等を使った部署内業務自動化に携わる。
             その後、都内の会計事務所へ転職し、税務会計業務全般を担当。
