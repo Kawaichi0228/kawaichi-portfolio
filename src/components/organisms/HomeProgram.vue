@@ -3,7 +3,8 @@
     <div class="home-program__wrap w-10/12 mx-auto">
       <div class="flex justify-center mb-12">
         <h2>
-          <img class="h-6" src="@\assets\images\subtitle\program.png" />
+          <img class="h-6 mb-3" src="@\assets\images\subtitle\program.png" />
+          <DividerGradation />
         </h2>
       </div>
 
@@ -35,6 +36,7 @@ import HomeProgramPortfolio from "@/components/organisms/HomeProgramPortfolio.vu
 import HomeProgramDotTask from "@/components/organisms/HomeProgramDotTask.vue";
 import HomeProgramFitScreenWindow from "@/components/organisms/HomeProgramFitScreenWindow.vue";
 import HomeProgramShotokukakudai from "@/components/organisms/HomeProgramShotokukakudai.vue";
+import DividerGradation from "@/components/parts/DividerGradation.vue";
 
 export default defineComponent({
   components: {
@@ -42,6 +44,7 @@ export default defineComponent({
     HomeProgramDotTask,
     HomeProgramFitScreenWindow,
     HomeProgramShotokukakudai,
+    DividerGradation,
   },
 });
 </script>

@@ -19,7 +19,7 @@
         Kakedashi Engineer's Portfolio Site.
       </div>
       <!-- 各言語の内容 -->
-      <div class="-mt-1 leading-8">
+      <div class="-mt-1 leading-9">
         <transition-group
           tag="span"
           appear
@@ -27,7 +27,7 @@
           @enter="panelsEnter"
         >
           <span
-            class="text-sm tracking-widest sr__fadein-bottom-delay"
+            class="text-sm tracking-widest"
             v-for="(panel, index) in panels"
             :key="panel.value"
             :data-index="index"

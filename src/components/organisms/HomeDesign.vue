@@ -3,7 +3,8 @@
     <div class="w-10/12 mx-auto">
       <div class="flex justify-center mb-12">
         <h2>
-          <img class="h-6" src="@\assets\images\subtitle\design.png" />
+          <img class="h-6 mb-3" src="@\assets\images\subtitle\design.png" />
+          <DividerGradation />
         </h2>
       </div>
 
@@ -28,11 +29,13 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import HomeDesignImageCard from "@/components/parts/HomeDesignImageCard.vue";
+import DividerGradation from "@/components/parts/DividerGradation.vue";
 //import ModalTest from "@/components/parts/ModalTest.vue";
 
 export default defineComponent({
   components: {
     HomeDesignImageCard,
+    DividerGradation,
     //ModalTest,
   },
 
