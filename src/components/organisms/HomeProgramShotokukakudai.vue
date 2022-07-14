@@ -47,10 +47,16 @@
           </div>
 
           <!-- ボタン -->
-          <ButtonRightAllow
-            linkUrl="https://sites.google.com/view/shotokukakudai-excel"
-            class="w-6/12"
-          />
+          <div class="flex flex-row space-x-2 justify-left">
+            <ButtonRightAllow
+              linkUrl="https://sites.google.com/view/shotokukakudai-excel"
+              class="w-6/12"
+            />
+            <ButtonGitHub
+              linkUrl="https://github.com/Kawaichi0228/shotokukakudaiexcel-main"
+              class="w-6/12"
+            />
+          </div>
         </div>
 
         <!-- 各言語のタグ -->
@@ -66,10 +72,12 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import ButtonRightAllow from "@/components/parts/ButtonRightAllow.vue";
+import ButtonGitHub from "@/components/parts/ButtonGitHub.vue";
 
 export default defineComponent({
   components: {
     ButtonRightAllow,
+    ButtonGitHub,
   },
 });
 </script>
