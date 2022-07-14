@@ -16,7 +16,7 @@
             class="w-6/12 sm:w-4/12 md:w-3/12"
           >
             <HomeDesignImageCard>
-              <img :src="imagePath" />
+              <img :src="imagePath" class="max-h-[300px]" />
             </HomeDesignImageCard>
             <!--<ModalTest />-->
           </div>
@@ -42,17 +42,22 @@ export default defineComponent({
   setup() {
     // 各カードに表示させる画像のパス
     const imagePathArray = ref<object>([
+      require("@/assets/images/design/yubasoba.png"),
+      require("@/assets/images/design/yakiniku.png"),
       require("@/assets/images/design/brawnhambark.png"),
-      require("@/assets/images/design/brawnice.png"),
       require("@/assets/images/design/brawnmenu.png"),
+      require("@/assets/images/design/brawnice.png"),
       require("@/assets/images/design/rakunouseminor.png"),
-      require("@/assets/images/design/resthouse.png"),
-      require("@/assets/images/design/menchikorokke.png"),
-      require("@/assets/images/design/nikkomilk.png"),
+      require("@/assets/images/design/korokke.png"),
+      require("@/assets/images/design/menchi.png"),
       require("@/assets/images/design/nokomilk.png"),
       require("@/assets/images/design/ozasa.png"),
-      require("@/assets/images/design/cafeore.png"),
-      require("@/assets/images/design/yakinikuhouse.png"),
+      require("@/assets/images/design/cafeore_brown.png"),
+      require("@/assets/images/design/cafeore_maroyaka.png"),
+      require("@/assets/images/design/nikkomilk.png"),
+      require("@/assets/images/design/nobori_matsutake.png"),
+      require("@/assets/images/design/braunyakinikuhouse.png"),
+      require("@/assets/images/design/yakitatepan.png"),
     ]);
 
     // 子コンポーネント側のコンポーネント情報を受け取る ref を宣言
