@@ -1,3 +1,24 @@
+<script setup lang="ts">
+import { reactive } from "vue";
+import HamburgerMenu from "@/components/parts/HamburgerMenu.vue";
+import NavMenu from "@/components/organisms/NavMenu.vue";
+
+// 変数の型定義
+type Data = {
+  isClick: boolean;
+};
+
+// data
+const state = reactive<Data>({
+  isClick: false,
+});
+
+// getEmit
+const isClick = (isClick: boolean) => {
+  state.isClick = isClick;
+};
+</script>
+
 <template>
   <div class="home-header">
     <div class="home-header__logo-wrapper">
@@ -24,41 +45,6 @@
     <NavMenu class="home-header__drawer-menu" v-if="state.isClick" />
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent, reactive } from "vue";
-import HamburgerMenu from "@/components/parts/HamburgerMenu.vue";
-import NavMenu from "@/components/organisms/NavMenu.vue";
-
-// 変数の型定義
-interface Data {
-  isClick: boolean;
-}
-
-export default defineComponent({
-  components: {
-    HamburgerMenu,
-    NavMenu,
-  },
-
-  setup() {
-    // data
-    const state = reactive<Data>({
-      isClick: false,
-    });
-
-    // getEmit
-    const isClick = (isClick: boolean) => {
-      state.isClick = isClick;
-    };
-
-    return {
-      state,
-      isClick,
-    };
-  },
-});
-</script>
 
 <style lang="scss" scoped>
 @import "@/styles/_mixin.scss";

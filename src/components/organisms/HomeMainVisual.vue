@@ -1,3 +1,41 @@
+<script setup lang="ts">
+import { ref } from "vue";
+import gsap from "gsap";
+
+// -------------------------------------------------------------------------
+// gsapアニメーション設定
+// -------------------------------------------------------------------------
+// 表示するパネルの値設定 (v-for用の配列オブジェクト)
+const panels = ref([
+  { value: "Go / " },
+  { value: "Gin / " },
+  { value: "Python / " },
+  { value: "Vue.js / " },
+  { value: "HTML5 / " },
+  { value: "CSS3 / " },
+  { value: "TypeScript / " },
+  { value: "ExcelVBA / " },
+  { value: "MySQL" },
+]);
+// パネルのスタート設定
+const panelsBeforeEnter = (el: any) => {
+  gsap.set(el, {
+    y: 100,
+    opacity: 0,
+  });
+};
+// パネルのアニメーション設定
+const panelsEnter = (el: any, done: any) => {
+  gsap.to(el, {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    delay: 1 + el.dataset.index * 0.2,
+    onComplete: done,
+  });
+};
+</script>
+
 <template>
   <div class="home-main-visual pt-24 pb-60 sr__fadein-top">
     <div class="w-10/12 mx-auto">
@@ -40,47 +78,6 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from "vue";
-import gsap from "gsap";
-
-export default defineComponent({
-  setup() {
-    // 表示するパネルの値設定 (v-for用の配列オブジェクト)
-    const panels = ref([
-      { value: "Go / " },
-      { value: "Gin / " },
-      { value: "Python / " },
-      { value: "Vue.js / " },
-      { value: "HTML5 / " },
-      { value: "CSS3 / " },
-      { value: "TypeScript / " },
-      { value: "ExcelVBA / " },
-      { value: "MySQL" },
-    ]);
-    // パネルのスタート設定
-    const panelsBeforeEnter = (el: any) => {
-      gsap.set(el, {
-        y: 100,
-        opacity: 0,
-      });
-    };
-    // パネルのアニメーション設定
-    const panelsEnter = (el: any, done: any) => {
-      gsap.to(el, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        delay: 1 + el.dataset.index * 0.2,
-        onComplete: done,
-      });
-    };
-    return { panels, panelsBeforeEnter, panelsEnter };
-  },
-});
-</script>
-
-
 <style lang="scss" scoped>
 .home-main-visual {
 }
@@ -92,9 +89,3 @@ export default defineComponent({
   max-height: 2rem;
 }
 </style>
-
-
-
-
-
-

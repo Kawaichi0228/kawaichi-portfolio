@@ -1,3 +1,38 @@
+<script setup lang="ts">
+import { ref } from "vue";
+import HomeDesignImageCard from "@/components/parts/HomeDesignImageCard.vue";
+import DividerGradation from "@/components/parts/DividerGradation.vue";
+//import ModalTest from "@/components/parts/ModalTest.vue";
+
+// 各カードに表示させる画像のパス
+const imagePathArray = [
+  require("@/assets/images/design/yubasoba.png"),
+  require("@/assets/images/design/yakiniku.png"),
+  require("@/assets/images/design/brawnhambark.png"),
+  require("@/assets/images/design/brawnmenu.png"),
+  require("@/assets/images/design/brawnice.png"),
+  require("@/assets/images/design/rakunouseminor.png"),
+  require("@/assets/images/design/korokke.png"),
+  require("@/assets/images/design/menchi.png"),
+  require("@/assets/images/design/nokomilk.png"),
+  require("@/assets/images/design/ozasa.png"),
+  require("@/assets/images/design/cafeore_brown.png"),
+  require("@/assets/images/design/cafeore_maroyaka.png"),
+  require("@/assets/images/design/nikkomilk.png"),
+  require("@/assets/images/design/nobori_matsutake.png"),
+  require("@/assets/images/design/braunyakinikuhouse.png"),
+  require("@/assets/images/design/yakitatepan.png"),
+];
+
+// 子コンポーネント側のコンポーネント情報を受け取る ref を宣言
+const childRef = ref();
+
+// 子コンポーネント側のメソッドを発火させるメソッドを実装しています。
+const onChildMethodClick = () => {
+  childRef.value.openModal();
+};
+</script>
+
 <template>
   <div class="home-design py-28">
     <div class="w-10/12 mx-auto">
@@ -25,56 +60,6 @@
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent, ref } from "vue";
-import HomeDesignImageCard from "@/components/parts/HomeDesignImageCard.vue";
-import DividerGradation from "@/components/parts/DividerGradation.vue";
-//import ModalTest from "@/components/parts/ModalTest.vue";
-
-export default defineComponent({
-  components: {
-    HomeDesignImageCard,
-    DividerGradation,
-    //ModalTest,
-  },
-
-  setup() {
-    // 各カードに表示させる画像のパス
-    const imagePathArray = ref<object>([
-      require("@/assets/images/design/yubasoba.png"),
-      require("@/assets/images/design/yakiniku.png"),
-      require("@/assets/images/design/brawnhambark.png"),
-      require("@/assets/images/design/brawnmenu.png"),
-      require("@/assets/images/design/brawnice.png"),
-      require("@/assets/images/design/rakunouseminor.png"),
-      require("@/assets/images/design/korokke.png"),
-      require("@/assets/images/design/menchi.png"),
-      require("@/assets/images/design/nokomilk.png"),
-      require("@/assets/images/design/ozasa.png"),
-      require("@/assets/images/design/cafeore_brown.png"),
-      require("@/assets/images/design/cafeore_maroyaka.png"),
-      require("@/assets/images/design/nikkomilk.png"),
-      require("@/assets/images/design/nobori_matsutake.png"),
-      require("@/assets/images/design/braunyakinikuhouse.png"),
-      require("@/assets/images/design/yakitatepan.png"),
-    ]);
-
-    // 子コンポーネント側のコンポーネント情報を受け取る ref を宣言
-    const childRef = ref();
-
-    // 子コンポーネント側のメソッドを発火させるメソッドを実装しています。
-    const onChildMethodClick = () => {
-      childRef.value.openModal();
-    };
-
-    return {
-      imagePathArray,
-      onChildMethodClick,
-    };
-  },
-});
-</script>
 
 <style lang="scss" scoped>
 @import "@/styles/_mixin.scss";

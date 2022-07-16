@@ -49,8 +49,7 @@
     "parserOptions": {
       "ecmaVersion": 2020
     },
-    "rules": {},
-    "vue/setup-compiler-macros": true
+    "rules": {}
   },
   "browserslist": [
     "> 1%",

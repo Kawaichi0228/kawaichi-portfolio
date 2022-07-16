@@ -1,3 +1,6 @@
+<script setup lang="ts">
+</script>
+
 <template>
   <div class="home-footer">
     <div class="flex flex-row justify-center mb-8">

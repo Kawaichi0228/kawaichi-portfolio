@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import HomeProgramPortfolio from "@/components/organisms/HomeProgramPortfolio.vue";
+import HomeProgramDotTask from "@/components/organisms/HomeProgramDotTask.vue";
+import HomeProgramFitScreenWindow from "@/components/organisms/HomeProgramFitScreenWindow.vue";
+import HomeProgramShotokukakudai from "@/components/organisms/HomeProgramShotokukakudai.vue";
+import DividerGradation from "@/components/parts/DividerGradation.vue";
+</script>
+
 <template>
   <div class="home-program">
     <div class="home-program__wrap w-10/12 mx-auto">
@@ -29,25 +37,6 @@
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-import HomeProgramPortfolio from "@/components/organisms/HomeProgramPortfolio.vue";
-import HomeProgramDotTask from "@/components/organisms/HomeProgramDotTask.vue";
-import HomeProgramFitScreenWindow from "@/components/organisms/HomeProgramFitScreenWindow.vue";
-import HomeProgramShotokukakudai from "@/components/organisms/HomeProgramShotokukakudai.vue";
-import DividerGradation from "@/components/parts/DividerGradation.vue";
-
-export default defineComponent({
-  components: {
-    HomeProgramPortfolio,
-    HomeProgramDotTask,
-    HomeProgramFitScreenWindow,
-    HomeProgramShotokukakudai,
-    DividerGradation,
-  },
-});
-</script>
 
 <style lang="scss" scoped>
 @import "@/styles/_mixin.scss";

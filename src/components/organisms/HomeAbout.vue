@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import DividerGradation from "@/components/parts/DividerGradation.vue";
+</script>
+
 <template>
   <div class="home-about">
     <div class="w-10/12 max-w-3xl mx-auto">
@@ -24,17 +28,6 @@
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-import DividerGradation from "@/components/parts/DividerGradation.vue";
-
-export default defineComponent({
-  components: {
-    DividerGradation,
-  },
-});
-</script>
 
 <style lang="scss" scoped>
 @import "@/styles/_mixin.scss";
