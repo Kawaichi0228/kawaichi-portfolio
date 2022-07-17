@@ -9,7 +9,7 @@ import gsap from "gsap";
 type Panel = {
   value: string
 };
-const panels: Ref<Array<Panel>> = ref([
+const panels: Ref<Array<Panel>> = ref<Array<Panel>>([
   { value: "Go / " },
   { value: "Gin / " },
   { value: "Python / " },
@@ -44,17 +44,11 @@ const panelsEnter = (el: any, done: any) => {
   <div class="home-main-visual pt-24 pb-60 sr__fadein-top">
     <div class="w-10/12 mx-auto">
       <div class="flex justify-center mb-2">
-        <img
-          class="home-main-visual__image"
-          src="@\assets\images\logo\logo.png"
-        />
+        <img class="home-main-visual__image" src="@\assets\images\logo\logo.png" />
       </div>
       <div class="flex justify-center mb-2">
         <h1>
-          <img
-            class="home-main-visual__title"
-            src="@\assets\images\logo\title.png"
-          />
+          <img class="home-main-visual__title" src="@\assets\images\logo\title.png" />
         </h1>
       </div>
       <div class="text-primary tracking-widest sr__fadein-bottom-delay">
@@ -62,18 +56,8 @@ const panelsEnter = (el: any, done: any) => {
       </div>
       <!-- 各言語の内容 -->
       <div class="-mt-1 leading-9">
-        <transition-group
-          tag="span"
-          appear
-          @before-enter="panelsBeforeEnter"
-          @enter="panelsEnter"
-        >
-          <span
-            class="text-sm tracking-widest"
-            v-for="(panel, index) in panels"
-            :key="panel.value"
-            :data-index="index"
-          >
+        <transition-group tag="span" appear @before-enter="panelsBeforeEnter" @enter="panelsEnter">
+          <span class="text-sm tracking-widest" v-for="(panel, index) in panels" :key="panel.value" :data-index="index">
             <span>{{ panel.value }}</span>
           </span>
         </transition-group>
@@ -83,12 +67,13 @@ const panelsEnter = (el: any, done: any) => {
 </template>
 
 <style lang="scss" scoped>
-.home-main-visual {
-}
+.home-main-visual {}
+
 .home-main-visual__image {
   max-height: 5rem;
   margin-bottom: 0.5rem;
 }
+
 .home-main-visual__title {
   max-height: 2rem;
 }
