@@ -1,3 +1,6 @@
+<script setup lang="ts">
+</script>
+
 <template>
   <div class="fixedBottom">
     <a
@@ -25,10 +28,7 @@
   </div>
 </template>
 
-<script lang="ts">
-</script>
-
-<style lang="scss">
+<style lang="scss" scoped>
 .fixedBottom {
   position: fixed; /* 「ウィンドウ全体」を基準に絶対値表示指定 */
   z-index: 2; /* レイヤー前面背面順 */
