@@ -3,7 +3,7 @@ import HomeProgramPortfolio from "@/components/organisms/HomeProgramPortfolio.vu
 import HomeProgramDotTask from "@/components/organisms/HomeProgramDotTask.vue";
 import HomeProgramFitScreenWindow from "@/components/organisms/HomeProgramFitScreenWindow.vue";
 import HomeProgramShotokukakudai from "@/components/organisms/HomeProgramShotokukakudai.vue";
-import DividerGradation from "@/components/parts/DividerGradation.vue";
+import DividerGradation from "@/components/atoms/DividerGradation.vue";
 </script>
 
 <template>
@@ -18,20 +18,12 @@ import DividerGradation from "@/components/parts/DividerGradation.vue";
 
       <div class="sr__fadein-right">
         <div class="flex flex-col md:flex-row justify-center md:space-x-16">
-          <HomeProgramDotTask
-            class="mb-28 md:mb-18 w-12/12 md:w-6/12 md:max-w-lg shadow-lg"
-          />
-          <HomeProgramFitScreenWindow
-            class="mb-28 md:mb-18 w-12/12 md:w-6/12 md:max-w-lg shadow-lg"
-          />
+          <HomeProgramDotTask class="mb-28 md:mb-18 w-12/12 md:w-6/12 md:max-w-lg shadow-lg" />
+          <HomeProgramFitScreenWindow class="mb-28 md:mb-18 w-12/12 md:w-6/12 md:max-w-lg shadow-lg" />
         </div>
         <div class="flex flex-col md:flex-row justify-center md:space-x-16">
-          <HomeProgramPortfolio
-            class="mb-28 md:mb-18 w-12/12 md:w-6/12 md:max-w-lg shadow-lg"
-          />
-          <HomeProgramShotokukakudai
-            class="mb-28 md:mb-18 w-12/12 md:w-6/12 md:max-w-lg shadow-lg"
-          />
+          <HomeProgramPortfolio class="mb-28 md:mb-18 w-12/12 md:w-6/12 md:max-w-lg shadow-lg" />
+          <HomeProgramShotokukakudai class="mb-28 md:mb-18 w-12/12 md:w-6/12 md:max-w-lg shadow-lg" />
         </div>
       </div>
     </div>

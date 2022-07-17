@@ -3,17 +3,10 @@
     <div class="w-full mx-auto overflow-hidden bg-white">
       <!-- ロゴ -->
       <div>
-        <a
-          class="tw__hover-motion-opacity"
-          href="https://sites.google.com/view/shotokukakudai-excel"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            class="object-cover object-center w-full h-56"
-            src="@/assets/images/program/shotokukakudaiexcel/logo.png"
-            alt="avatar"
-          />
+        <a class="tw__hover-motion-opacity" href="https://sites.google.com/view/shotokukakudai-excel" target="_blank"
+          rel="noreferrer">
+          <img class="object-cover object-center w-full h-56" src="@/assets/images/program/shotokukakudaiexcel/logo.png"
+            alt="avatar" />
         </a>
       </div>
 
@@ -48,14 +41,8 @@
 
           <!-- ボタン -->
           <div class="flex flex-row space-x-2 justify-left">
-            <ButtonRightAllow
-              linkUrl="https://sites.google.com/view/shotokukakudai-excel"
-              class="w-6/12"
-            />
-            <ButtonGitHub
-              linkUrl="https://github.com/Kawaichi0228/shotokukakudaiexcel-main"
-              class="w-6/12"
-            />
+            <ButtonRightAllow linkUrl="https://sites.google.com/view/shotokukakudai-excel" class="w-6/12" />
+            <ButtonGitHub linkUrl="https://github.com/Kawaichi0228/shotokukakudaiexcel-main" class="w-6/12" />
           </div>
         </div>
 
@@ -71,8 +58,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import ButtonRightAllow from "@/components/parts/ButtonRightAllow.vue";
-import ButtonGitHub from "@/components/parts/ButtonGitHub.vue";
+import ButtonRightAllow from "@/components/atoms/ButtonRightAllow.vue";
+import ButtonGitHub from "@/components/atoms/ButtonGitHub.vue";
 
 export default defineComponent({
   components: {

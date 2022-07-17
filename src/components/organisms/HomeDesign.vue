@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import HomeDesignImageCard from "@/components/parts/HomeDesignImageCard.vue";
-import DividerGradation from "@/components/parts/DividerGradation.vue";
+import DividerGradation from "@/components/atoms/DividerGradation.vue";
 //import ModalTest from "@/components/parts/ModalTest.vue";
 
 // 各カードに表示させる画像のパス
@@ -45,11 +45,7 @@ const onChildMethodClick = () => {
 
       <div class="sr__fadein-left">
         <div class="flex flex-row flex-wrap justify-center">
-          <div
-            v-for="imagePath in imagePathArray"
-            :key="imagePath"
-            class="w-6/12 sm:w-4/12 md:w-3/12"
-          >
+          <div v-for="imagePath in imagePathArray" :key="imagePath" class="w-6/12 sm:w-4/12 md:w-3/12">
             <HomeDesignImageCard>
               <img :src="imagePath" class="max-h-[300px]" />
             </HomeDesignImageCard>
@@ -65,11 +61,9 @@ const onChildMethodClick = () => {
 @import "@/styles/_mixin.scss";
 
 .home-design {
-  @include slant-bg(
-    $top: 0rem,
+  @include slant-bg($top: 0rem,
     $z-index: -2,
     $angle: 0deg,
-    $bg-color: theme("colors.base")
-  );
+    $bg-color: theme("colors.base"));
 }
 </style>

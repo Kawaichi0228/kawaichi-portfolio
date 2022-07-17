@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import DividerGradation from "@/components/parts/DividerGradation.vue";
+import DividerGradation from "@/components/atoms/DividerGradation.vue";
 </script>
 
 <template>

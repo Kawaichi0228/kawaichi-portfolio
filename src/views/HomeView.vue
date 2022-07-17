@@ -7,7 +7,7 @@ import HomeProgram from "@/components/organisms/HomeProgram.vue";
 import HomeDesign from "@/components/organisms/HomeDesign.vue";
 import HomeFooter from "@/components/organisms/HomeFooter.vue";
 import ToggleVisbleAtScrollEvent from "@/components/parts/ToggleVisbleAtScrollEvent.vue";
-import ButtonScrollTop from "@/components/parts/ButtonScrollTop.vue";
+import ButtonScrollTop from "@/components/atoms/ButtonScrollTop.vue";
 import ScrollReveal from "scrollreveal";
 
 // スクロールに連動するフェードアニメーション関数をここに全て定義
@@ -87,7 +87,7 @@ onMounted(() => {
           duration: 800,
           offset: 0,
         }">
-          <ButtonScrollTop></ButtonScrollTop>
+          <ButtonScrollTop />
         </a>
       </template>
     </ToggleVisbleAtScrollEvent>

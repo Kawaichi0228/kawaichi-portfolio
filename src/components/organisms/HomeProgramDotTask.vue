@@ -4,17 +4,10 @@
       <!-- ロゴ -->
       <div>
         <!-- TODO: デプロイ後、href="..."のリンク差し替え -->
-        <a
-          class="tw__hover-motion-opacity"
-          target="_blank"
-          rel="noreferrer"
-          href="https://github.com/Kawaichi0228/golang-vue-portfolio"
-        >
-          <img
-            class="object-cover object-center w-full h-56"
-            src="@\assets\images\program\dottask\logo.png"
-            alt="avatar"
-          />
+        <a class="tw__hover-motion-opacity" target="_blank" rel="noreferrer"
+          href="https://github.com/Kawaichi0228/golang-vue-portfolio">
+          <img class="object-cover object-center w-full h-56" src="@\assets\images\program\dottask\logo.png"
+            alt="avatar" />
         </a>
       </div>
 
@@ -48,10 +41,7 @@
           <div class="flex flex-row space-x-2 justify-left">
             <!-- TODO: リンクURLを挿入 -->
             <!--<ButtonRightAllow linkUrl="/" class="w-6/12" />-->
-            <ButtonGitHub
-              linkUrl="https://github.com/Kawaichi0228/golang-vue-portfolio"
-              class="w-6/12"
-            />
+            <ButtonGitHub linkUrl="https://github.com/Kawaichi0228/golang-vue-portfolio" class="w-6/12" />
           </div>
         </div>
 
@@ -78,7 +68,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 //import ButtonRightAllow from "@/components/parts/ButtonRightAllow.vue";
-import ButtonGitHub from "@/components/parts/ButtonGitHub.vue";
+import ButtonGitHub from "@/components/atoms/ButtonGitHub.vue";
 
 export default defineComponent({
   components: {
