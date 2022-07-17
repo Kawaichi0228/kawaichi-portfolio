@@ -1,12 +1,15 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, Ref } from "vue";
 import gsap from "gsap";
 
 // -------------------------------------------------------------------------
 // gsapアニメーション設定
 // -------------------------------------------------------------------------
 // 表示するパネルの値設定 (v-for用の配列オブジェクト)
-const panels = ref([
+type Panel = {
+  value: string
+};
+const panels: Ref<Array<Panel>> = ref([
   { value: "Go / " },
   { value: "Gin / " },
   { value: "Python / " },
@@ -17,6 +20,7 @@ const panels = ref([
   { value: "ExcelVBA / " },
   { value: "MySQL" },
 ]);
+
 // パネルのスタート設定
 const panelsBeforeEnter = (el: any) => {
   gsap.set(el, {

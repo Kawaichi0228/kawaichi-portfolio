@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="home-footer">
+  <div class="home-footer w-full py-16">
     <div class="flex flex-row justify-center mb-8">
       <!-- twitterアイコン -->
       <a
@@ -34,7 +34,6 @@
 
 <style scoped lang="scss">
 .home-footer {
-  @apply w-full py-16;
   background-color: theme("colors.letterlight");
 }
 .home-footer__icon {
