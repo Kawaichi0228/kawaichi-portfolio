@@ -80,12 +80,15 @@ onMounted(() => {
 
 <template>
   <div class="home">
-    <ToggleVisbleAtScrollEvent
-      startPostionToVisible="80"
-      startPostionToHidden="100"
-    >
+    <ToggleVisbleAtScrollEvent startPostionToVisible="80" startPostionToHidden="100">
       <template #fadein-slot>
-        <ButtonScrollTop></ButtonScrollTop>
+        <a href="#top" v-smooth-scroll="{
+          updateHistory: false,
+          duration: 800,
+          offset: 0,
+        }">
+          <ButtonScrollTop></ButtonScrollTop>
+        </a>
       </template>
     </ToggleVisbleAtScrollEvent>
 
