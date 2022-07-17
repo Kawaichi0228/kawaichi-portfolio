@@ -9,7 +9,8 @@ import gsap from "gsap";
 type Panel = {
   value: string
 };
-const panels: Ref<Array<Panel>> = ref<Array<Panel>>([
+type Panels = [...Panel[]]
+const panels: Ref<Panels> = ref<Panels>([
   { value: "Go / " },
   { value: "Gin / " },
   { value: "Python / " },
