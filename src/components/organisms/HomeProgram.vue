@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import HomeProgramPortfolio from "@/components/organisms/HomeProgramPortfolio.vue";
-import HomeProgramDotTask from "@/components/organisms/HomeProgramDotTask.vue";
-import HomeProgramFitScreenWindow from "@/components/organisms/HomeProgramFitScreenWindow.vue";
-import HomeProgramShotokukakudai from "@/components/organisms/HomeProgramShotokukakudai.vue";
+import HomeProgramPortfolio from "@/components/molecules/HomeProgramPortfolio.vue";
+import HomeProgramDotTask from "@/components/molecules/HomeProgramDotTask.vue";
+import HomeProgramFitScreenWindow from "@/components/molecules/HomeProgramFitScreenWindow.vue";
+import HomeProgramShotokukakudai from "@/components/molecules/HomeProgramShotokukakudai.vue";
 import DividerGradation from "@/components/atoms/DividerGradation.vue";
 </script>
 

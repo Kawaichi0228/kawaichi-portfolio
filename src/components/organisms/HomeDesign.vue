@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import HomeDesignImageCard from "@/components/parts/HomeDesignImageCard.vue";
+import HomeDesignImageCard from "@/components/molecules/HomeDesignImageCard.vue";
 import DividerGradation from "@/components/atoms/DividerGradation.vue";
-//import ModalTest from "@/components/parts/ModalTest.vue";
+//import ModalTest from "@/components/molecules/ModalTest.vue";
 
 // 各カードに表示させる画像のパス
 const imagePathArray = [

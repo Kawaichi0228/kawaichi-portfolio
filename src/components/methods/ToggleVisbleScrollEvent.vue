@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import FadeInTransition from "./FadeInTransition.vue";
+import FadeInTransition from "@/components/methods/FadeInTransition.vue";
 
 export default {
   components: {

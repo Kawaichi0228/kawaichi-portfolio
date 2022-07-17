@@ -1,5 +1,5 @@
 <script setup lang="ts">
-//import ButtonRightAllow from "@/components/atoms/ButtonRightAllow.vue";
+//import ButtonRightAllow from "@/components/molecules/ButtonRightAllow.vue";
 import ButtonGitHub from "@/components/atoms/ButtonGitHub.vue";
 </script>
 
