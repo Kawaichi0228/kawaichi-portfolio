@@ -1,24 +1,14 @@
 # kawaichi-portfolio
 
-## Project setup
-```
-npm install
-```
+<img src="logo-promotion.png" width="600px">
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+私のポートフォリオサイトです。
 
-### Compiles and minifies for production
-```
-npm run build
-```
+<br>
 
-### Lints and fixes files
-```
-npm run lint
-```
+## 使用技術　　
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- フロントエンド
+  - Vue3 / TypeScript / SCSS
+- CSSフレームワーク
+  - Tailwind
