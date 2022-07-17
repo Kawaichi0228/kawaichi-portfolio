@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import ButtonRightAllow from "@/components/atoms/ButtonRightAllow.vue";
+import ButtonGitHub from "@/components/atoms/ButtonGitHub.vue";
+</script>
+
 <template>
   <div class="flex flex-row flex-wrap justify-center text-left">
     <div class="w-full mx-auto overflow-hidden bg-white">
@@ -55,16 +60,3 @@
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-import ButtonRightAllow from "@/components/atoms/ButtonRightAllow.vue";
-import ButtonGitHub from "@/components/atoms/ButtonGitHub.vue";
-
-export default defineComponent({
-  components: {
-    ButtonRightAllow,
-    ButtonGitHub,
-  },
-});
-</script>
