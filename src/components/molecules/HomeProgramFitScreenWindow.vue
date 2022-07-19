@@ -35,6 +35,7 @@ import ButtonGitHub from "@/components/atoms/ButtonGitHub.vue";
             <div>
               <p>- 備考 -</p>
               <p>・デスクトップアプリケーション</p>
+              <p>・実ステップ数 約3,300ステップ</p>
               <p>・スクラッチ開発(CSSフレームワーク未使用)</p>
             </div>
           </div>
