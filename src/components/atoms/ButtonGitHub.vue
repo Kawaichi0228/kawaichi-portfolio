@@ -1,10 +1,14 @@
+<script setup lang="ts">
+import { defineProps } from "vue";
+type Props = {
+  linkUrl: string;
+};
+defineProps<Props>();
+</script>
+
 <template>
   <!-- GitHubボタン -->
-  <a
-    :href="linkUrl"
-    target="_blank"
-    rel="noreferrer"
-    class="
+  <a :href="linkUrl" target="_blank" rel="noreferrer" class="
       w-full
       relative
       inline-flex
@@ -17,10 +21,8 @@
       ease-out
       border-2 border-letterlight
       group
-    "
-  >
-    <span
-      class="
+    ">
+    <span class="
         absolute
         inset-0
         flex
@@ -34,12 +36,10 @@
         bg-letterlight
         group-hover:translate-x-0
         ease
-      "
-    >
+      ">
       <img class="h-8" src="@/assets/images/icons/github-fill-white.png" />
     </span>
-    <span
-      class="
+    <span class="
         absolute
         flex
         items-center
@@ -53,28 +53,9 @@
         group-hover:translate-x-full
         ease
         font-semibold
-      "
-    >
+      ">
       <img class="h-6 mr-2" src="@/assets/images/icons/github-fill-black.png" />
-      GitHub</span
-    >
+      GitHub</span>
     <span class="relative invisible">GitHub</span>
   </a>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-
-type Props = {
-  linkUrl: string;
-};
-
-export default defineComponent({
-  props: {
-    linkUrl: { type: String, required: true },
-  },
-  setup(props: Props) {
-    props.linkUrl;
-  },
-});
-</script>

@@ -28,7 +28,7 @@ const imagePathArray = [
 const childRef = ref();
 
 // 子コンポーネント側のメソッドを発火させるメソッドを実装しています。
-const onChildMethodClick = () => {
+const onChildMethodClick = (): void => {
   childRef.value.openModal();
 };
 </script>
