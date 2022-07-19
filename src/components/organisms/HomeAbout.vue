@@ -17,10 +17,10 @@ import DividerGradation from "@/components/atoms/DividerGradation.vue";
           <p class="text-xs mb-3">age 28</p>
           <p class="text-xs mb-6">Kawasaki City, Kanagawa</p>
           <p class="sr__fadein-bottom-delay">
-            学生時代に情報処理とDTPデザインを学び、卒業後はJAグループ会社にて勤務。
-            子会社のDTPデザインや、補助金事業の総括、ExcelVBA等を使った部署内業務自動化に携わる。
+            学生時代に情報処理と広告デザインを学び、卒業後はJAグループ会社にて勤務。
+            子会社の広告デザインや、補助金事業の総括、ExcelVBA等を使った部署内業務自動化に携わる。
             その後、都内の会計事務所へ転職し、税務会計業務全般を担当。
-            VBAスキルを活用し、確定申告用のツール等を開発し業務の円滑化を図る。
+            VBAを活用した確定申告用のツール等を開発し、業務の円滑化を図る。
             働く中で、仕組みやモノづくりが好きだということをあらためて感じ、エンジニアを志す。
           </p>
         </div>
