@@ -1,9 +1,9 @@
+<script setup lang="ts">
+</script>
+
 <template>
   <router-view />
 </template>
-
-<script lang="ts">
-</script>
 
 <style lang="scss">
 // MEMO: tailwindの`@tailwind base`で読み込まれているためコメントアウト
